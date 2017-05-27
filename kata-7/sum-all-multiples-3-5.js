@@ -4,7 +4,7 @@ return the sum of all multiples of 3 and 5.
 
 function findSum(n) {
   var sumArr = [];
-  
+
   for ( var x = 0; x <= n; x ++ ) {
 
   if ( x % 3 === 0 || x % 5 === 0 ) {
