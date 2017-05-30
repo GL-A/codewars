@@ -6,15 +6,10 @@
 // numbers. So make sure your solution is optimized for speed.
 
 function findUnique(numbers) {
-  var checker = [];
-  for ( var x = numbers.length - 1; x >= 0; x -- ) {
-    if (!checker.includes(numbers[x]) ) {
-      checker.push(numbers[x]);
-      numbers.splice(x, 1);
+  numbers = numbers.sort();
+  for ( var x = 0; x < numbers.length; x ++ ) {
+    if ( numbers[x] !== numbers[x + 1] && numbers[x] !== numbers[x - 1] ) {
+      return numbers[x];
     }
   }
-
-  return checker.filter( num => {
-    return numbers.indexOf( num ) == -1;
-  })[0]
 }
